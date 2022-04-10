@@ -42,3 +42,26 @@ Tunneler is the best shortcut to download the most popular free web hosters
 
 
 * Termux
+* Linux
+
+## REQUIRMENTS:
+
+* Internet 
+
+* Storage 30 MB
+
+## INSTALLATION [Termux] :
+
+* `apt-get update -y`
+
+* `apt-get upgrade -y`
+
+* `pkg install git -y`
+
+* `git clone https://github.com/rdxlr/Tunneler`
+
+* `cd tunneler`
+
+* `ls`
+
+* `bash tunneler.sh`
