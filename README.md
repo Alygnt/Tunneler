@@ -13,55 +13,34 @@
 </p>
 
 <p align="center">
-
 <a href="https://github.com/rdxlr"><img title="Language" src="https://img.shields.io/badge/Made%20with-Bash-1f425f.svg?v=103"></a>
 <a href="https://github.com/rdxlr"><img title="Licence" src="https://img.shields.io/badge/License-GNU General Public License v3.0-blue.svg"></a>
-
-
 </p>
 
 <p align="center">
-
 <a href="https://github.com/rdxlr"><img title="Followers" src="https://img.shields.io/github/followers/rdxlr?color=blue&style=flat-square"></a>
-
 <a href="https://github.com/rdxlr"><img title="Stars" src="https://img.shields.io/github/stars/rdxlr/tunneler?color=red&style=flat-square"></a>
-
 <a href="https://github.com/rdxlr"><img title="Forks" src="https://img.shields.io/github/forks/rdxlr/tunneler?color=red&style=flat-square"></a>
-
 <a href="https://github.com/rdxlr"><img title="Issues" src="https://img.shields.io/github/issues/rdxlr/tunneler?color=red&style=flat-square"></a>
-
 <a href="https://github.com/rdxlr"><img title="Watching" src="https://img.shields.io/github/watchers/rdxlr/tunneler?label=Watchers&color=blue&style=flat-square"></a>
-
 </p>
 
 ## ABOUT TOOL
 Tunneler is the best shortcut to download the most popular free web hosters
 
 ## TESTED ON:
-
-
-
 * Termux
 * Linux
 
 ## REQUIRMENTS:
-
 * Internet 
-
-* Storage 30 MB
+* Storage 30 MB max
 
 ## INSTALLATION [Termux] :
-
 * `apt-get update -y`
-
 * `apt-get upgrade -y`
-
 * `pkg install git -y`
-
 * `git clone https://github.com/rdxlr/Tunneler`
-
-* `cd tunneler`
-
+* `cd Tunneler`
 * `ls`
-
 * `bash tunneler.sh`
