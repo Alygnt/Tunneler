@@ -45,7 +45,7 @@ Tunneler is the best shortcut to download the most popular free web hosters
 * `ls`
 * `bash tunneler.sh`
 
-## Screenshots
+## SCREENSHOTS:
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RDXLR/Tunneler/main/core/pics/ss1.png">
