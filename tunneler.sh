@@ -254,5 +254,7 @@ sleep 1
 dependencies
 sleep 1
 clear
+echo " "
+echo " "
 credits_banner
 choice
