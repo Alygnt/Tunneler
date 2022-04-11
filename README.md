@@ -45,6 +45,14 @@ Tunneler is the best shortcut to download the most popular free web hosters
 * `ls`
 * `bash tunneler.sh`
 
+## OPTIONS:
+* <b>Ngrok old (zip file) : </b> <i> It's the older version of ngrok in form of zip file</i>
+* <b>Ngrok new (tar file): </b> <i> It's the latest version of ngrok in form of tar file (recommended for Linux users)</i>
+* <b>Ngrok advanced (for mobile/termux users): </b> <i> It's the older version of ngrok which runs properly and efficiently without hotspot for mobile users, it's in form of zip file (recommended for termux users)</i>
+* <b>Cloudflared : </b> <i> It's the new way of web hosting for free, its efficient like Ngrok and it's in form of zip file</i>
+* <b>Openssh : </b> <i> It's the other way of web hosting and very easy to use, it's not downloaded/installed as a file but installed with apt command</i>
+* <b>Exit : </b> <i> To exit the program </i>
+
 ## SCREENSHOTS:
 
 <p align="center">
