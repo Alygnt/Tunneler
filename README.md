@@ -58,3 +58,8 @@ Tunneler is the best shortcut to download the most popular free web hosters
 <p align="center">
 <img src="https://raw.githubusercontent.com/RDXLR/Tunneler/main/core/pics/ss1.png">
 </p>
+
+## THANKS TO :
+* Tunnel tool by noob hackers
+* Ngrok
+* Cloudflare
