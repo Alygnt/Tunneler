@@ -36,7 +36,7 @@ Tunneler is the best shortcut to download the most popular free web hosters
 * Internet 
 * Storage 30 MB max
 
-## INSTALLATION [Termux] :
+## INSTALLATION :
 * `apt-get update -y`
 * `apt-get upgrade -y`
 * `pkg install git -y`
