@@ -162,10 +162,9 @@ download_cloudflared() {
         if [[ -e "$file" ]]; then
                 rm -rf "$file"
         fi
-        wget --no-check-certificate "$url" > /dev/null 2>&1
-        if [[ -e "$file" ]]; then
-                mv -f "$file" /cloudflared > /dev/null 2>&1
-                chmod +x /cloudflared > /dev/null 2>&1
+        wget -o cloudflared --no-check-certificate "$url" > /dev/null 2>&1
+        if [[ -e "cloudflared" ]]; then
+                chmod +x cloudflared > /dev/null 2>&1
 		mv cloudflared $HOME > /dev/null 2>&1
         else
                 echo -e "\n${RED}[${WHITE}!${RED}]${RED} Error occured, Install Cloudflared manually."
