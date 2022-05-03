@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RDXLR/Tunneler/main/core/pics/banner.png">
+<img src="https://raw.githubusercontent.com/RDXLR/Tunneler/main/core/pics/Tunneler-poster.png">
 </p>
 
 <p align="center">
