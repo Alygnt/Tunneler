@@ -1,6 +1,6 @@
 <p align="center">
 <a href="https://github.com/rdxlr"><img title="Github" src="https://img.shields.io/badge/rdxlr-grey?style=for-the-badge&logo=github"></a>
-<a href="https://github.com/rdxlr/nphisher"><img title="Github" src="https://img.shields.io/badge/Tunneler-yellow?style=for-the-badge"></a>
+<a href="https://github.com/rdxlr/tunneler"><img title="Github" src="https://img.shields.io/badge/Tunneler-yellow?style=for-the-badge"></a>
 </p>
 
 <p align="center">
@@ -19,10 +19,10 @@
 
 <p align="center">
 <a href="https://github.com/rdxlr"><img title="Followers" src="https://img.shields.io/github/followers/rdxlr?color=blue&style=flat-square"></a>
-<a href="https://github.com/rdxlr"><img title="Stars" src="https://img.shields.io/github/stars/rdxlr/tunneler?color=red&style=flat-square"></a>
-<a href="https://github.com/rdxlr"><img title="Forks" src="https://img.shields.io/github/forks/rdxlr/tunneler?color=red&style=flat-square"></a>
-<a href="https://github.com/rdxlr"><img title="Issues" src="https://img.shields.io/github/issues/rdxlr/tunneler?color=red&style=flat-square"></a>
-<a href="https://github.com/rdxlr"><img title="Watching" src="https://img.shields.io/github/watchers/rdxlr/tunneler?label=Watchers&color=blue&style=flat-square"></a>
+<a href="https://github.com/rdxlr/tunneler"><img title="Stars" src="https://img.shields.io/github/stars/rdxlr/tunneler?color=red&style=flat-square"></a>
+<a href="https://github.com/rdxlr/tunneler"><img title="Forks" src="https://img.shields.io/github/forks/rdxlr/tunneler?color=red&style=flat-square"></a>
+<a href="https://github.com/rdxlr/tunneler"><img title="Issues" src="https://img.shields.io/github/issues/rdxlr/tunneler?color=red&style=flat-square"></a>
+<a href="https://github.com/rdxlr/tunneler"><img title="Watching" src="https://img.shields.io/github/watchers/rdxlr/tunneler?label=Watchers&color=red&style=flat-square"></a>
 </p>
 
 ## ABOUT TOOL
