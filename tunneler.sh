@@ -214,7 +214,6 @@ ngrok_token_check(){
 	if [ -s "${HOME}/.ngrok2/ngrok.yml" ]; then
 		echo -e "\n${GREEN}[${WHITE}#${GREEN}]${GREEN} Ngrok Authtoken setup is already done."
 		read -p "${RED}[${WHITE}-${RED}]${GREEN} DO YOU WANT TO CHANGE THE TOKEN (Y/N) : ${BLUE}" ntr
-                ngrok_token_check
 		case $ntr in
 	       	      Y | y)
 	     	        ngrok_token_setup;;
