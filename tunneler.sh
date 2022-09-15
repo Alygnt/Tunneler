@@ -73,141 +73,46 @@ xpermission(){
 	fi
 }
 
-## Download Ngrok
-download_ngrok() {
-        url="$1"
-        file=`basename $url`
-        if [[ -e "$file" ]]; then
-                rm -rf "$file"
-        fi
-        wget --no-check-certificate "$url" > /dev/null 2>&1
-        if [[ -e "$file" ]]; then
-                unzip "$file" > /dev/null 2>&1
-                mv -f ngrok /ngrok > /dev/null 2>&1
-                rm -rf "$file" > /dev/null 2>&1
-                chmod +x /ngrok > /dev/null 2>&1
-		mv ngrok $HOME > /dev/null 2>&1
-		clear
-                banner
-                ngrok_token_check
-        else
-                echo -e "\n${RED}[${WHITE}!${RED}]${RED} Error occured, Install Ngrok manually."
-                { reset_color; exit 1; }
-        fi
-}
-install_ngrok() {
+## Download Ngrok old
+install_ngrok_old() {
         if [[ -e "$HOME/ngrok" ]]; then
                 echo -e "\n${GREEN}[${WHITE}+${GREEN}]${GREEN} Ngrok already installed."
         else
                 echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing ngrok..."${WHITE}
                 arch=`uname -m`
                 if [[ ("$arch" == *'arm'*) || ("$arch" == *'Android'*) ]]; then
-                        download_ngrok 'https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip'
+                        download 'https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip' 'ngrok'
                 elif [[ "$arch" == *'aarch64'* ]]; then
-                        download_ngrok 'https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm64.zip'
+                        download 'https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm64.zip' 'ngrok'
                 elif [[ "$arch" == *'x86_64'* ]]; then
-                        download_ngrok 'https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip'
+                        download 'https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip' 'ngrok'
                 else
-                        download_ngrok 'https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip'
+                        download 'https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip' 'ngrok'
                 fi
         fi
-
+        ngrok_token_check
 }
 
-## Download Ngrok latest
-download_ngrok_lat() {
-        url="$1"
-        file=`basename $url`
-        if [[ -e "$file" ]]; then
-                rm -rf "$file"
-        fi
-        wget --no-check-certificate "$url" > /dev/null 2>&1
-        if [[ -e "$file" ]]; then
-                tar xvzf "$file" > /dev/null 2>&1
-                mv -f ngrok .server > /dev/null 2>&1
-                rm -rf "$file" > /dev/null 2>&1
-                chmod +x .server/ngrok > /dev/null 2>&1
-		mv ngrok $HOME > /dev/null 2>&1
-		clear
-                banner
-                ngrok_token_check
-        else
-                echo -e "\n${RED}[${WHITE}!${RED}]${RED} Error occured, Install Ngrok manually."
-                { reset_color; exit 1; }
-        fi
-}
-install_ngrok_lat() {
-        if [[ -e "$HOME/ngrok" ]]; then
-                echo -e "\n${GREEN}[${WHITE}#${GREEN}]${GREEN} Ngrok already installed."
-        else
-                echo -e "\n${GREEN}[${WHITE}#${GREEN}]${CYAN} Installing ngrok..."${WHITE}
-                arch=`uname -m`
-                if [[ ("$arch" == *'arm'*) || ("$arch" == *'Android'*) ]]; then
-                        download_ngrok_lat 'https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.tgz'
-                elif [[ "$arch" == *'aarch64'* ]]; then
-                        download_ngrok_lat 'https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm64.tgz'
-                elif [[ "$arch" == *'x86_64'* ]]; then
-                        download_ngrok_lat 'https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.tgz'
-                else
-                        download_ngrok_lat 'https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.tgz'
-                fi
-        fi
-
-}
-
-##Install ngrok advanced
-install_ngrok_advanced(){
-	if [[ -e "$HOME/ngrok" ]]; then
-                echo -e "\n${GREEN}[${WHITE}#${GREEN}]${GREEN} Ngrok already installed."
-        else
-                echo -e "\n${GREEN}[${WHITE}#${GREEN}]${CYAN} Installing ngrok..."${WHITE}
-		wget --no-check-certificate https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
-		unzip ngrok-2.2.8-linux-arm64.zip
-		chmod +x ngrok
-		rm -rf ngrok-2.2.8-linux-arm64.zip
-		mv ngrok $HOME > /dev/null 2>&1
-		clear
-		banner
-		ngrok_token_check
+## Install ngrok
+install_ngrok() {
+	if [[ -e ".server/ngrok" ]]; then
+		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${GREEN} Ngrok already installed."
+	else
+		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing ngrok..."${WHITE}
+		arch=`uname -m`
+		if [[ ("$arch" == *'arm'*) || ("$arch" == *'Android'*) ]]; then
+			download 'https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-arm.tgz' 'ngrok'
+		elif [[ "$arch" == *'aarch64'* ]]; then
+			download 'https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-arm64.tgz' 'ngrok'
+		elif [[ "$arch" == *'x86_64'* ]]; then
+			download 'https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz' 'ngrok'
+		else
+			download 'https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-386.tgz' 'ngrok'
+		fi
 	fi
+	ngrok_token_check
 }
 
-
-## Download Cloudflared
-download_cloudflared() {
-        url="$1"
-        file=`basename $url`
-        if [[ -e "$file" ]]; then
-                rm -rf "$file"
-        fi
-        wget -o cloudflared --no-check-certificate "$url" > /dev/null 2>&1
-        if [[ -e "$file" ]]; then
-                chmod +x cloudflared > /dev/null 2>&1
-		mv cloudflared $HOME > /dev/null 2>&1
-        else
-                echo -e "\n${RED}[${WHITE}!${RED}]${RED} Error occured, Install Cloudflared manually."
-                { reset_color; exit 1; }
-        fi
-	msg_exit
-}
-install_cloudflared() {
-        if [[ -e "$HOME/cloudflared" ]]; then
-                echo -e "\n${GREEN}[${WHITE}+${GREEN}]${GREEN} Cloudflared already installed."
-        else
-                echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing Cloudflared..."${WHITE}
-                arch=`uname -m`
-                if [[ ("$arch" == *'arm'*) || ("$arch" == *'Android'*) ]]; then
-                        download_cloudflared 'https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm'
-                elif [[ "$arch" == *'aarch64'* ]]; then
-                        download_cloudflared 'https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64'
-                elif [[ "$arch" == *'x86_64'* ]]; then
-                        download_cloudflared 'https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64'
-                else
-                        download_cloudflared 'https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-386'
-                fi
-        fi
-
-}
 
 ##Ngrok token auth
 ngrok_token_check(){
@@ -243,6 +148,7 @@ ngrok_token_setup(){
 
 	if [[ -s "${HOME}/.ngrok2/ngrok.yml" ]]; then
 	       rm -rf ${HOME}/.ngrok2/ngrok.yml
+	       echo -e "\n"
 	       read -p "${RED}[${WHITE}-${RED}]${GREEN} Enter your authtoken :" ntoken
 	       authline="authtoken : ${ntoken}"
 	       echo "$authline" >> ngrok.yml
@@ -253,6 +159,43 @@ ngrok_token_setup(){
 	       mv ngrok.yml ${HOME}/.ngrok2/
 	fi
 
+}
+
+##Install ngrok advanced
+install_ngrok_advanced(){
+	if [[ -e "$HOME/ngrok" ]]; then
+                echo -e "\n${GREEN}[${WHITE}#${GREEN}]${GREEN} Ngrok already installed."
+        else
+                echo -e "\n${GREEN}[${WHITE}#${GREEN}]${CYAN} Installing ngrok..."${WHITE}
+		wget --no-check-certificate https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
+		unzip ngrok-2.2.8-linux-arm64.zip
+		chmod +x ngrok
+		rm -rf ngrok-2.2.8-linux-arm64.zip
+		mv ngrok $HOME > /dev/null 2>&1
+		clear
+		banner
+		ngrok_token_check
+	fi
+}
+
+
+## Install Cloudflared
+install_cloudflared() {
+	if [[ -e ".server/cloudflared" ]]; then
+		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${GREEN} Cloudflared already installed."
+	else
+		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing Cloudflared..."${WHITE}
+		arch=`uname -m`
+		if [[ ("$arch" == *'arm'*) || ("$arch" == *'Android'*) ]]; then
+			download 'https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm' 'cloudflared'
+		elif [[ "$arch" == *'aarch64'* ]]; then
+			download 'https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64' 'cloudflared'
+		elif [[ "$arch" == *'x86_64'* ]]; then
+			download 'https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64' 'cloudflared'
+		else
+			download 'https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-386' 'cloudflared'
+		fi
+	fi
 }
 
 #Download Openssh
@@ -276,6 +219,71 @@ install_apache2() {
         msg_exit
 }
 
+## Install LocalXpose
+install_localxpose() {
+	if [[ -e ".server/loclx" ]]; then
+		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${GREEN} LocalXpose already installed."
+	else
+		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing LocalXpose..."${WHITE}
+		arch=`uname -m`
+		if [[ ("$arch" == *'arm'*) || ("$arch" == *'Android'*) ]]; then
+			download 'https://api.localxpose.io/api/v2/downloads/loclx-linux-arm.zip' 'loclx'
+		elif [[ "$arch" == *'aarch64'* ]]; then
+			download 'https://api.localxpose.io/api/v2/downloads/loclx-linux-arm64.zip' 'loclx'
+		elif [[ "$arch" == *'x86_64'* ]]; then
+			download 'https://api.localxpose.io/api/v2/downloads/loclx-linux-amd64.zip' 'loclx'
+		else
+			download 'https://api.localxpose.io/api/v2/downloads/loclx-linux-386.zip' 'loclx'
+		fi
+	fi
+	auth_localxpose
+}
+auth_localxpose() {
+	./.server/loclx -help > /dev/null 2>&1 &
+	sleep 1
+	[ -d ".localxpose" ] && auth_f=".localxpose/.access" || auth_f="$HOME/.localxpose/.access" 
+
+	[ "$(./.server/loclx account status | grep Error)" ] && {
+		echo -e "\n\n${RED}[${WHITE}!${RED}]${GREEN} Create an account on ${ORANGE}localxpose.io${GREEN} & copy the token\n"
+		sleep 3
+		read -p "${RED}[${WHITE}-${RED}]${ORANGE} Loclx Token :${ORANGE} " loclx_token
+		[[ $loclx_token == "" ]] && {
+			echo -e "\n${RED}[${WHITE}!${RED}]${RED} You have to input Localxpose Token." ; sleep 2 ; choice
+		} || {
+			echo -n "$loclx_token" > $auth_f 2> /dev/null
+		}
+	}
+}
+
+# Download Binaries
+download() {
+	url="$1"
+	output="$2"
+	file=`basename $url`
+	if [[ -e "$file" || -e "$output" ]]; then
+		rm -rf "$file" "$output"
+	fi
+	curl --silent --insecure --fail --retry-connrefused \
+		--retry 3 --retry-delay 2 --location --output "${file}" "${url}"
+
+	if [[ -e "$file" ]]; then
+		if [[ ${file#*.} == "zip" ]]; then
+			unzip -qq $file > /dev/null 2>&1
+			mv -f $output .server/$output > /dev/null 2>&1
+		elif [[ ${file#*.} == "tgz" ]]; then
+			tar -zxf $file > /dev/null 2>&1
+			mv -f $output .server/$output > /dev/null 2>&1
+		else
+			mv -f $file .server/$output > /dev/null 2>&1
+		fi
+		chmod +x .server/$output > /dev/null 2>&1
+		rm -rf "$file"
+	else
+		echo -e "\n${RED}[${WHITE}!${RED}]${RED} Error occured while downloading ${output}."
+		{ reset_color; exit 1; }
+	fi
+}
+
 choice() {
 echo -e "${BLUE} ${NC}"
 echo -e "${BLUE} ${NC}"
@@ -287,15 +295,16 @@ echo -e "${GREEN} 3. NGROK advanced (for mobile/termux users) ${NC}"
 echo -e "${GREEN} 4. CLOUDFLARED ${NC}"
 echo -e "${GREEN} 5. OPENSSH ${NC}"
 echo -e "${GREEN} 6. APACHE2 ${NC}"
+echo -e "${GREEN} 7. LOCALXPOSE ${NC}"
 echo -e "${GREEN} 0. Exit ${NC}"
 echo -e "${BLUE} ${NC}"
 read -p " ${ORANGE} Enter a choice 1/2/3/4/5/6/0 : " choice
 echo ' '
 case $choice in
 	1 | 01 )
-		install_ngrok;;
+		install_ngrok_old;;
 	2 | 02)
-		install_ngrok_lat;;
+		install_ngrok;;
 	3 | 03)
                 install_ngrok_advanced;;
 	4 | 04)
@@ -303,6 +312,8 @@ case $choice in
 	5 | 05)
 		install_openssh;;
 	6 | 06)
+		install_apache2;;
+	7 | 07)
 		install_apache2;;
 	0)
 		msg_exit;;
