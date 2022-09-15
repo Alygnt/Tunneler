@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/RDXLR/Tunneler"><img title="Version" src="https://img.shields.io/badge/Version-1.1-green.svg"></a>
+<a href="https://github.com/RDXLR/Tunneler"><img title="Version" src="https://img.shields.io/badge/Version-1.2-green.svg"></a>
 <a href="https://github.com/RDXLR/Tunneler"><img title="Maintainence" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"></a>
 </p>
 
