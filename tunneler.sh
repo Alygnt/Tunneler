@@ -20,7 +20,7 @@ credits_banner(){
 echo -e "${YELLOW} ▀▀█▀▀ █░░█ █▀▀▄ █▀▀▄ █▀▀ █░░ █▀▀ █▀▀█${NC}"
 echo -e "${YELLOW} ░▒█░░ █░░█ █░░█ █░░█ █▀▀ █░░ █▀▀ █▄▄▀${NC}"
 echo -e "${YELLOW} ░▒█░░ ░▀▀▀ ▀░░▀ ▀░░▀ ▀▀▀ ▀▀▀ ▀▀▀ ▀░▀▀${NC}"
-echo -e "${CYAN}                                -RDXLR ${NC}"
+echo -e "${CYAN}                                -Alygnt ${NC}"
 echo -e "${WHITE}         ${NC}"
 echo -e "${WHITE}                 Version 1.1       ${NC}"
 }
