@@ -22,7 +22,7 @@ echo -e "${YELLOW} ░▒█░░ █░░█ █░░█ █░░█ █▀
 echo -e "${YELLOW} ░▒█░░ ░▀▀▀ ▀░░▀ ▀░░▀ ▀▀▀ ▀▀▀ ▀▀▀ ▀░▀▀${NC}"
 echo -e "${CYAN}                                -Alygnt ${NC}"
 echo -e "${WHITE}         ${NC}"
-echo -e "${WHITE}                 Version 1.1       ${NC}"
+echo -e "${WHITE}                 Version 1.2       ${NC}"
 }
 
 #Dependencies
@@ -287,7 +287,7 @@ download() {
 choice() {
 echo -e "${BLUE} ${NC}"
 echo -e "${BLUE} ${NC}"
-echo -e "${BLUE} CHOOSE WHAT YOU WANT TO ${NC}"
+echo -e "${BLUEBG} CHOOSE WHAT YOU WANT TO ${NC}"
 echo -e "${BLUE} ${NC}"
 echo -e "${GREEN} 1. NGROK old (zip file)${NC}"
 echo -e "${GREEN} 2. NGROK new (tar file)${NC}"
@@ -298,7 +298,7 @@ echo -e "${GREEN} 6. APACHE2 ${NC}"
 echo -e "${GREEN} 7. LOCALXPOSE ${NC}"
 echo -e "${GREEN} 0. Exit ${NC}"
 echo -e "${BLUE} ${NC}"
-read -p " ${ORANGE} Enter a choice 1/2/3/4/5/6/0 : " choice
+read -p " ${ORANGE} Enter a choice : " choice
 echo ' '
 case $choice in
 	1 | 01 )
@@ -314,7 +314,7 @@ case $choice in
 	6 | 06)
 		install_apache2;;
 	7 | 07)
-		install_apache2;;
+		install_localxpose;;
 	0)
 		msg_exit;;
 	*)
